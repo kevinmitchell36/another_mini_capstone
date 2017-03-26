@@ -13,7 +13,11 @@ class DragonsController < ApplicationController
   end
 
   def show  
-    @dragons = Dragon.find_by(id: params[:id])
+    @dragon = Dragon.find_by(id: params[:id])
     render "show.html.erb"
+  end
+
+  def edit
+    render "edit.html.erb"
   end
 end
