@@ -1,0 +1,19 @@
+<h1>Level Up!</h1>
+<%= form_tag "/dragons/#{@dragon.id}", method: :patch do %>
+<div class="form-group">
+  Category: <input type="text" value="<%= @dragon.category%>" class="form-control" name="category">
+</div>
+<div class="form-group">
+  Color: <input type="text" value="<%= @dragon.color%>" class="form-control" name="color">
+</div>
+<div class="form-group">
+  Size: <input type="text" value="<%= @dragon.size%>" class="form-control" name="size">
+</div>
+<div class="form-group">
+  Age: <input type="text" value="<%= @dragon.age%>" class="form-control" name="age">
+</div>
+<div class="form-group">
+  Alignment: <input type="text" value="<%= @dragon.alignment%>" class="form-control" name="alignment">
+</div>
+<input type="submit" value="Level Up!">
+<% end %>
