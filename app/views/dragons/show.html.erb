@@ -7,6 +7,10 @@
 <div>
 <a href="/dragons/<%= @dragon.id %>/edit">Level Dragon?</a>  
 </div>
-
+<div>
+  <%= form_tag "/dragons/#{@dragon.id}", method: :delete do %>
+  <input type="submit" value="Defeat Dragon">
+</div>
+<% end %>
 
 

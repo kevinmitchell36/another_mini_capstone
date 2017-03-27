@@ -9,6 +9,13 @@ class DragonsController < ApplicationController
   end
 
   def create
+    @dragon = Dragon.create(
+      category: params[:category],
+      color: params[:color],
+      size: params[:size],
+      age: params[:age],
+      alignment: params[:alignment]
+      )
     redirect_to "/dragons"
   end
 
@@ -31,5 +38,11 @@ class DragonsController < ApplicationController
     @dragon.alignment = params[:alignment]
     @dragon.save
     redirect_to "/dragons/#{@dragon.id}"
+  end
+
+  def destroy
+    @dragon = Dragon.find_by(id: params[:id])
+    @dragon.destroy
+    redirect_to "/dragons"
   end
 end
